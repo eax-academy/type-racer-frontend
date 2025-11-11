@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Type Racer</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">TypeRacer</div>
+    <nav>
+      <button id="btn-home">Home</button>
+      <button id="btn-practice">Practice</button>
+      <button id="btn-multiplayer">Multiplayer</button>
+      <button id="btn-leaderboard">Leaderboard</button>
+      <button id="btn-login">Login</button>
+    </nav>
+  </header>
+
+  <main id="main-view">
+    <!-- Home Section -->
+    <section id="home-section" class="view active">
+      <h1>Welcome to Type Racer</h1>
+      <p>Race against others or practice solo to improve your typing skills.</p>
+      <button id="btn-start-practice">Start Practice</button>
+      <button id="btn-create-room">Create Private Room</button>
+      <button id="btn-join-room">Join Room</button>
+    </section>
+
+    <!-- Practice Section -->
+    <section id="practice-section" class="view hidden">
+      <div class="text-display">
+        <p id="race-text">Loading snippet...</p>
+      </div>
+
+      <textarea id="typing-area" placeholder="Start typing here..." disabled></textarea>
+
+      <div class="stats">
+        <span>WPM: <span id="wpm">0</span></span>
+        <span>Accuracy: <span id="accuracy">0%</span></span>
+        <span>Time: <span id="timer">0s</span></span>
+      </div>
+
+      <div class="race-track">
+        <div class="player-progress">
+          <img src="assets/placeholder-avatar.png" class="avatar" alt="Player">
+          <div class="progress-bar"><div class="progress"></div></div>
+        </div>
+      </div>
+
+      <button id="btn-end-practice" class="secondary">End Practice</button>
+    </section>
+
+    <!-- Multiplayer Section -->
+    <section id="multiplayer-section" class="view hidden">
+      <div class="room-controls">
+        <input id="room-code" placeholder="Enter Room Code">
+        <button id="btn-join">Join</button>
+      </div>
+      <div class="waiting-room">
+        <h2>Waiting for players...</h2>
+        <ul id="player-list"></ul>
+      </div>
+      <div id="countdown"></div>
+    </section>
+
+    <!-- Leaderboard Section -->
+    <section id="leaderboard-section" class="view hidden">
+      <h2>Global Leaderboard</h2>
+      <table id="leaderboard-table">
+        <thead>
+          <tr><th>Rank</th><th>Player</th><th>WPM</th><th>Accuracy</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- Login Section -->
+    <section id="login-section" class="view hidden">
+      <h2>Login / Register</h2>
+      <input id="email" type="email" placeholder="Email">
+      <input id="password" type="password" placeholder="Password">
+      <button id="btn-login-submit">Login</button>
+      <p>No account? <a href="#" id="btn-register">Register</a></p>
+    </section>
+
+    <!-- Result Section -->
+    <section id="result-section" class="view hidden">
+      <h2>Race Results</h2>
+      <ul id="result-list"></ul>
+      <button id="btn-play-again">Play Again</button>
+      <button id="btn-home-return">Return Home</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 TypeRacer Student Edition</p>
+  </footer>
+
+  <script src="scripts/app.js"></script>
+  <script src="scripts/ui.js"></script>
+  <script src="scripts/game.js"></script>
+  <script src="scripts/leaderboard.js"></script>
+</body>
+</html>
